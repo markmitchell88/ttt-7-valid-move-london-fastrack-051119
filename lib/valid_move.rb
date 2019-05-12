@@ -3,7 +3,9 @@ def valid_move?(board, index)
   move = nil
   index.between?(0,8)
 
-  if (!position_taken? && board[index] > 8)
+  if (!position_taken? && board[index] < 9)
+    move = false
+  else if board[index] > 8
     move = false
   else move = true
 
